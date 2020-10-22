@@ -26,7 +26,7 @@ export default class UserForm extends React.Component {
       .then((response) => response.json())
       .then((response) => {
         localStorage.setItem("token", response.jwt)
-        localStorage.setItem("user", response.user.username)
+        localStorage.setItem("user", JSON.stringify(response.user))
         console.log(response, localStorage)});
   };
 
