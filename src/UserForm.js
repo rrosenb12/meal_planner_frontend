@@ -18,16 +18,17 @@ export default class UserForm extends React.Component {
     fetch("http://localhost:3000/users", {
       method: "POST",
       headers: {
-        "accepts": "application/json",
-        "content-type": "application/json"
+        accepts: "application/json",
+        "content-type": "application/json",
       },
-      body: JSON.stringify(this.state)
+      body: JSON.stringify(this.state),
     })
       .then((response) => response.json())
       .then((response) => {
-        localStorage.setItem("token", response.jwt)
-        localStorage.setItem("user", JSON.stringify(response.user))
-        console.log(response, localStorage)});
+        localStorage.setItem("token", response.jwt);
+        localStorage.setItem("user", JSON.stringify(response.user));
+        console.log(response, localStorage);
+      });
   };
 
   render() {
