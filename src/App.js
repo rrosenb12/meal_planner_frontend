@@ -1,7 +1,7 @@
 import React from "react";
 import UserForm from "./Components/UserForm";
-import NavBar from "./Components/NavBar"
-import {BrowserRouter, Route} from "react-router-dom"
+import NavBar from "./Components/NavBar";
+import { BrowserRouter, Route } from "react-router-dom";
 import "./App.css";
 
 export default class App extends React.Component {
@@ -26,16 +26,18 @@ export default class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-      <div className="App">
-        <Route path="/" component={NavBar}/>
-        <Route exact path="/login-signup" component={UserForm} />
-      </div>
+        <div className="App">
+          <Route path="/" component={NavBar} />
+          <Route path="/login" component={UserForm} />
+          <Route path="/signup" component={UserForm} />
+        </div>
       </BrowserRouter>
     );
   }
 }
 
-{/* <div
+{
+  /* <div
   class="btn-toolbar"
   role="toolbar"
   aria-label="Toolbar with button groups"
@@ -70,4 +72,5 @@ export default class App extends React.Component {
       8
     </button>
   </div>
-</div> */}
+</div> */
+}

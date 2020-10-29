@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function NavBar(props){
     return(
-        <h1>hi</h1>
+        <div className="navbar">
+            <h1 className="navbar-title">mealzy</h1>
+        </div>
     )
 }
