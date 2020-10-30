@@ -1,5 +1,35 @@
 .navbar {
+  content: "";
+  clear: both;
+  display: table;
   background-color: #F6BD8D;
+  width: 100%;
+  display: flex;
+  color: white;
+}
+.navbar title-right {
+  margin-left: auto;
+  margin-right: 0;
+  margin-top: 0 auto;
+  margin-bottom: 0 auto;
+}
+
+@media only screen and (min-width: 540px) {
+  .navbar {
+    height: 6vw;
+  }
+  .navbar title-right {
+    font-size: 3vw;
+  }
+}
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 /*# sourceMappingURL=App.css.map */

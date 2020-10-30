@@ -1,3 +1,23 @@
+@import "colors";
+@import "columns";
+@import "headers";
+
 .navbar{
-  background-color: #F6BD8D;
+  @include row;
+  background-color: $light-orange;
+  width: $col-12;
+  display: flex;
+  color: white;
+  title-right{
+    @include right-align;
+  }
+}
+
+@media only screen and (min-width: 540px) {
+  .navbar {
+    height: 6vw;
+    title-right {
+      font-size: 3vw;
+    }
+  }
 }
