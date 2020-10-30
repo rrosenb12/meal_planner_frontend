@@ -2,22 +2,23 @@
 @import "columns";
 @import "headers";
 
-.navbar{
+.navbar {
   @include row;
   background-color: $light-orange;
   width: $col-12;
   display: flex;
   color: white;
-  title-right{
+  title-right {
+    transition: font-size 0.3s ease-in;
+    font-size: 150%;
     @include right-align;
   }
 }
 
 @media only screen and (min-width: 540px) {
   .navbar {
-    height: 6vw;
     title-right {
-      font-size: 3vw;
+      font-size: 200%;
     }
   }
 }
