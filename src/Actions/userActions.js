@@ -13,3 +13,22 @@ export const setUser = token => {
       })
     }
 }
+
+export const createUser = userObj => {
+    return (dispatch) => {
+        fetch("http://localhost:3000/users", {
+            method: "POST",
+            headers: {
+              accepts: "application/json",
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(userObj),
+          })
+            .then((response) => response.json())
+            .then((response) => {
+              let token = localStorage.setItem("token", response.jwt);
+              localStorage.setItem("user", JSON.stringify(response.user));
+              dispatch({type: 'CREATE_USER', payload: token, currentUser: response.user})
+            });
+    }
+}

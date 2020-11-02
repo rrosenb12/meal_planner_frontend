@@ -1,11 +1,23 @@
-let defaultState = {currentUser: (localStorage.getItem("user") === undefined ? null : JSON.parse(localStorage.getItem("user"))), token: localStorage.getItem("token"), error: null}
+let defaultState = {
+  currentUser:
+    localStorage.getItem("user") === undefined
+      ? null
+      : JSON.parse(localStorage.getItem("user")),
+  token: localStorage.getItem("token"),
+  error: null,
+};
 
-export default function userReducer(state = defaultState, action){
-    switch (action.type){
-        case 'SET_USER':
-            console.log(state)
-            return state
-        default:
-            return state
-    }
+export default function userReducer(state = defaultState, action) {
+  switch (action.type) {
+    case "SET_USER":
+      return state;
+    case "CREATE_USER":
+      return {
+        ...state,
+        currentUser: action.currentUser,
+        token: action.payload,
+      };
+    default:
+      return state;
+  }
 }

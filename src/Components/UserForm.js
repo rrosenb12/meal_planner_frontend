@@ -1,6 +1,8 @@
 import React from "react";
+import { connect } from "react-redux";
+import {createUser} from "../Actions/userActions"
 
-export default class UserForm extends React.Component {
+class UserForm extends React.Component {
   state = {
     username: "",
     password: "",
@@ -15,20 +17,7 @@ export default class UserForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:3000/users", {
-      method: "POST",
-      headers: {
-        accepts: "application/json",
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(this.state),
-    })
-      .then((response) => response.json())
-      .then((response) => {
-        localStorage.setItem("token", response.jwt);
-        localStorage.setItem("user", JSON.stringify(response.user));
-        console.log(response, localStorage);
-      });
+    this.props.createUser(this.state)
   };
 
   render() {
@@ -60,3 +49,5 @@ export default class UserForm extends React.Component {
     );
   }
 }
+
+export default connect(null, {createUser})(UserForm)
