@@ -8,6 +8,15 @@
   width: $col-12;
   display: flex;
   color: white;
+  side-menu{
+    img{
+      width: 30%; 
+      height: 30%;
+    }
+    .sidebar-options{
+
+    }
+  }
   title-right {
     transition: font-size 0.3s ease-in;
     font-size: 150%;

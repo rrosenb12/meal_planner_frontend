@@ -7,6 +7,10 @@
   display: flex;
   color: white;
 }
+.navbar side-menu img {
+  width: 30%;
+  height: 30%;
+}
 .navbar title-right {
   transition: font-size 0.3s ease-in;
   font-size: 150%;
