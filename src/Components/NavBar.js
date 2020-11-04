@@ -12,20 +12,18 @@ export default function NavBar() {
 
   return (
     <>
-      {isClicked ? (
-        <side-menu style={{ width: "25%" }}>
-          <ul className="sidebar-options">
-            <NavLink to="/login">
-              <li>Login</li>
-            </NavLink>
-            <NavLink to="/signup">
-              <li>Signup</li>
-            </NavLink>
-          </ul>
-        </side-menu>
-      ) : null}
+      <side-menu style={isClicked ? { "width": "16.66%" } : { "width": "0%" }}>
+        <ul className="sidebar-options">
+          <NavLink to="/login">
+            <li>Login</li>
+          </NavLink>
+          <NavLink to="/signup">
+            <li>Signup</li>
+          </NavLink>
+        </ul>
+      </side-menu>
       <div
-        style={isClicked ? { "margin-left": "25%" } : { "margin-left": "0" }}
+        style={isClicked ? { "margin-left": "16.66%" } : { "margin-left": "0" }}
         className="navbar"
       >
         <image-wrapper>

@@ -4,13 +4,13 @@
 
 side-menu {
   height: 100%;
-  width: $col-3;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
   overflow-x: hidden;
   transition: 0.5s;
+  background-color: #D3C5D1;
 }
 
 .navbar {
