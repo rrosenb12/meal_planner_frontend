@@ -2,22 +2,30 @@
 @import "columns";
 @import "headers";
 
+side-menu {
+  height: 100%;
+  width: $col-3;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
 .navbar {
   @include row;
   background-color: $light-orange;
   width: $col-12;
   display: flex;
   color: white;
-  side-menu{
-    img{
-      width: 30%; 
-      height: 30%;
-    }
-    .sidebar-options{
-
-    }
+  transition: margin-left 0.5s;
+  img {
+    width: 8vh;
   }
   title-right {
+    right: 0;
+    position: fixed;
     transition: font-size 0.3s ease-in;
     font-size: 150%;
     @include right-align;
