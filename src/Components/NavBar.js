@@ -13,14 +13,12 @@ export default function NavBar() {
   return (
     <>
       <side-menu style={isClicked ? { width: "16.66%" } : { width: "0%" }}>
-        <ul className="sidebar-options">
-          <li onClick={click}>
-            <NavLink to="/login" className="link">Login</NavLink>
-          </li>
-          <li onClick={click}>
-            <NavLink to="/signup" className="link">Signup</NavLink>
-          </li>
-        </ul>
+        <NavLink onClick={click} to="/login" className="link">
+          Login
+        </NavLink>
+        <NavLink onClick={click} to="/signup" className="link">
+          Signup
+        </NavLink>
       </side-menu>
       <div
         style={isClicked ? { marginLeft: "16.66%" } : { marginLeft: "0" }}

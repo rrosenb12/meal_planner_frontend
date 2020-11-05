@@ -6,20 +6,24 @@ side-menu {
   left: 0;
   overflow-x: hidden;
   transition: 0.5s;
-  background-color: #E55934;
+  background-color: #f1e7e5;
+  display: flex;
+  flex-direction: column;
 }
-side-menu .sidebar-options {
-  list-style: none;
-}
-side-menu .sidebar-options .link {
-  color: white;
+side-menu .link {
+  color: #34344a;
+  margin: 5%;
+  padding: 5%;
+  text-align: center;
+  border: 1px solid #34344a;
+  border-radius: 1em;
 }
 
 .navbar {
   content: "";
   clear: both;
   display: table;
-  background-color: #4C1A57;
+  background-color: #d5b9b2;
   width: 100%;
   display: flex;
   color: white;
@@ -28,11 +32,15 @@ side-menu .sidebar-options .link {
 .navbar img {
   width: 8vh;
 }
+.navbar img:hover {
+  cursor: pointer;
+}
 .navbar .front-face,
 .navbar .back-face {
   backface-visibility: hidden;
 }
 .navbar title-right {
+  padding-right: 1%;
   right: 0;
   position: fixed;
   transition: font-size 0.3s ease-in;

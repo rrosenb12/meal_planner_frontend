@@ -10,30 +10,38 @@ side-menu {
   left: 0;
   overflow-x: hidden;
   transition: 0.5s;
-  background-color: $dark-orange;
-  .sidebar-options{
-    list-style: none;
-    .link{
-      color: white;
-    }
+  background-color: #f1e7e5;
+  display: flex;
+  flex-direction: column;
+  .link {
+    color: #34344a;
+    margin: 5%;
+    padding: 5%;
+    text-align: center;
+    border: 1px solid #34344a;
+    border-radius: 1em;
   }
 }
 
 .navbar {
   @include row;
-  background-color: $dark-purple;
+  background-color: #d5b9b2;
   width: $col-12;
   display: flex;
   color: white;
   transition: margin-left 0.5s;
   img {
     width: 8vh;
+    &:hover{
+      cursor: pointer;
+    }
   }
   .front-face,
-  .back-face{
-    backface-visibility: hidden
+  .back-face {
+    backface-visibility: hidden;
   }
   title-right {
+    padding-right: 1%;
     right: 0;
     position: fixed;
     transition: font-size 0.3s ease-in;
