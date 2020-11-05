@@ -10,38 +10,37 @@ side-menu {
   left: 0;
   overflow-x: hidden;
   transition: 1s;
-  background-color: #f1e7e5;
-  display: flex;
-  flex-direction: column;
+  background-color: $isabelline;
+  @include flex-column;
   .link {
-    color: #34344a;
+    color: $space-cadet;
     margin: 5%;
     padding: 5%;
     text-align: center;
-    border: 1px solid #34344a;
+    border: 1px solid $space-cadet;
     border-radius: 1em;
   }
 }
 
 .navbar {
   @include row;
-  background-color: #d5b9b2;
+  height: 10vh;
+  background-color: $silver-pink;
   width: $col-12;
   display: flex;
   color: white;
   transition: margin-left 1s;
   .scene {
-    width: 20vh;
-    height: 10vh;
-    perspective: 600px;
+    height: 100%;
     transition: margin-left 1s;
+    display: flex;
     .card {
       border: none;
       width: 0;
       height: 0;
       position: relative;
       transition: transform 1s;
-      img{
+      img {
         width: 8vh;
         cursor: pointer;
       }
@@ -51,11 +50,11 @@ side-menu {
         width: 100%;
         backface-visibility: hidden;
       }
-      .card__face--front{
-        background-color: #d5b9b2;
+      .card__face--front {
+        background-color: $silver-pink;
       }
       .card__face--back {
-        background-color: #d5b9b2;
+        background-color: $silver-pink;
         transform: rotateY(180deg);
       }
     }

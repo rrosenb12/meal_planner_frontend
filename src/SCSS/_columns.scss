@@ -16,3 +16,8 @@ $col-12: 100%;
   clear: both;
   display: table;
 }
+
+@mixin flex-column{
+  display: flex;
+  flex-direction: column;
+}
