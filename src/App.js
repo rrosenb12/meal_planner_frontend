@@ -1,6 +1,7 @@
 import React from "react";
 import UserForm from "./Components/UserForm";
 import NavBar from "./Components/NavBar";
+import Home from "./Components/Home"
 import { BrowserRouter, Route } from "react-router-dom";
 import { setUser } from "./Actions/userActions";
 import { connect } from "react-redux";
@@ -27,6 +28,7 @@ class App extends React.Component {
           <Route path="/" component={NavBar} />
           <Route path="/login" render={() => <UserForm type="login"/>} />
           <Route path="/signup" render={() => <UserForm type="signup"/>} />
+          <Route path="/home" component={Home}/>
         </div>
       </BrowserRouter>
     );

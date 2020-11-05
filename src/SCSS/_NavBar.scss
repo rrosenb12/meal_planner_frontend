@@ -28,7 +28,6 @@ side-menu {
   background-color: $light-gray;
   width: $col-12;
   display: flex;
-  color: $fogra-29;
   transition: margin-left 1s;
   .scene {
     height: 100%;
@@ -48,11 +47,7 @@ side-menu {
         width: 100%;
         backface-visibility: hidden;
       }
-      .card__face--front {
-        background-color: $light-gray;
-      }
       .card__face--back {
-        background-color: $light-gray;
         transform: rotateY(180deg);
       }
     }
@@ -67,6 +62,10 @@ side-menu {
     transition: font-size 0.3s ease-in;
     font-size: 150%;
     @include right-align;
+    .title {
+      color: $fogra-29;
+      text-decoration: none;
+    }
   }
 }
 
