@@ -10,12 +10,18 @@ side-menu {
   left: 0;
   overflow-x: hidden;
   transition: 0.5s;
-  background-color: #D3C5D1;
+  background-color: $dark-orange;
+  .sidebar-options{
+    list-style: none;
+    .link{
+      color: white;
+    }
+  }
 }
 
 .navbar {
   @include row;
-  background-color: $light-orange;
+  background-color: $dark-purple;
   width: $col-12;
   display: flex;
   color: white;

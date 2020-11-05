@@ -6,14 +6,20 @@ side-menu {
   left: 0;
   overflow-x: hidden;
   transition: 0.5s;
-  background-color: #D3C5D1;
+  background-color: #E55934;
+}
+side-menu .sidebar-options {
+  list-style: none;
+}
+side-menu .sidebar-options .link {
+  color: white;
 }
 
 .navbar {
   content: "";
   clear: both;
   display: table;
-  background-color: #F6BD8D;
+  background-color: #4C1A57;
   width: 100%;
   display: flex;
   color: white;

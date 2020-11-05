@@ -23,11 +23,9 @@ class UserForm extends React.Component {
         password: this.state.password,
       });
     this.props.type === "signup" && this.props.createUser(this.state);
-    // this.props.createUser(this.state)
   };
 
   render() {
-    console.log(this.props);
     return (
       <form onSubmit={this.handleSubmit}>
         <input
@@ -44,7 +42,7 @@ class UserForm extends React.Component {
           value={this.state.password}
           onChange={this.handleChange}
         />
-        {this.props.type === "signup" ? (
+        {this.props.type === "signup" && (
           <input
             type="text"
             name="email"
@@ -52,7 +50,7 @@ class UserForm extends React.Component {
             value={this.state.email}
             onChange={this.handleChange}
           />
-        ) : null}
+        )}
         <input type="submit" value="Submit"></input>
       </form>
     );
