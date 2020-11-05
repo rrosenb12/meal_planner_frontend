@@ -29,15 +29,36 @@ side-menu .link {
   color: white;
   transition: margin-left 0.5s;
 }
-.navbar img {
+.navbar .scene {
+  width: 20vh;
+  height: 10vh;
+  perspective: 600px;
+}
+.navbar .scene .card {
+  border: none;
+  width: 0;
+  height: 0;
+  position: relative;
+  transition: transform 1s;
+}
+.navbar .scene .card img {
   width: 8vh;
 }
-.navbar img:hover {
-  cursor: pointer;
-}
-.navbar .front-face,
-.navbar .back-face {
+.navbar .scene .card .card__face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
   backface-visibility: hidden;
+}
+.navbar .scene .card .card__face--front {
+  background-color: #d5b9b2;
+}
+.navbar .scene .card .card__face--back {
+  background-color: #d5b9b2;
+  transform: rotateY(180deg);
+}
+.navbar .scene #is-flipped {
+  transform: rotateY(180deg);
 }
 .navbar title-right {
   padding-right: 1%;

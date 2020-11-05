@@ -30,16 +30,47 @@ side-menu {
   display: flex;
   color: white;
   transition: margin-left 0.5s;
-  img {
-    width: 8vh;
-    &:hover{
-      cursor: pointer;
+  .scene {
+    width: 20vh;
+    height: 10vh;
+    perspective: 600px;
+    .card {
+      border: none;
+      width: 0;
+      height: 0;
+      position: relative;
+      transition: transform 1s;
+      img{
+        width: 8vh;
+      }
+      .card__face {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        backface-visibility: hidden;
+      }
+      .card__face--front{
+        background-color: #d5b9b2;
+      }
+      .card__face--back {
+        background-color: #d5b9b2;
+        transform: rotateY(180deg);
+      }
+    }
+    #is-flipped {
+      transform: rotateY(180deg);
     }
   }
-  .front-face,
-  .back-face {
-    backface-visibility: hidden;
-  }
+  // img {
+  //   width: 8vh;
+  //   &:hover{
+  //     cursor: pointer;
+  //   }
+  // }
+  // .front-face,
+  // .back-face {
+  //   backface-visibility: hidden;
+  // }
   title-right {
     padding-right: 1%;
     right: 0;

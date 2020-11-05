@@ -24,21 +24,19 @@ export default function NavBar() {
         style={isClicked ? { marginLeft: "16.66%" } : { marginLeft: "0" }}
         className="navbar"
       >
-        <image-wrapper>
-          {isClicked ? (
-            <img
-              src={openedSidebar}
-              alt="the sidebar menu is opened"
-              onClick={click}
-            />
-          ) : (
-            <img
-              src={closedSidebar}
-              alt="the sidebar menu is closed"
-              onClick={click}
-            />
-          )}
-        </image-wrapper>
+        <div
+          className="scene"
+          style={isClicked ? { marginLeft: "5%" } : { marginLeft: "0" }}
+        >
+          <div className="card" id={isClicked ? "is-flipped" : null}>
+            <div className="card__face card__face--front" onClick={click}>
+              <img src={closedSidebar} alt="the sidebar menu is closed" />
+            </div>
+            <div className="card__face card__face--back" onClick={click}>
+              <img src={openedSidebar} alt="the sidebar menu is opened" />
+            </div>
+          </div>
+        </div>
         <title-right>mealzy</title-right>
       </div>
     </>
