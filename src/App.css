@@ -6,16 +6,16 @@ side-menu {
   left: 0;
   overflow-x: hidden;
   transition: 1s;
-  background-color: #F1E7E5;
+  background-color: #EBEBEB;
   display: flex;
   flex-direction: column;
 }
 side-menu .link {
-  color: #34344A;
+  color: #011627;
   margin: 5%;
   padding: 5%;
   text-align: center;
-  border: 1px solid #34344A;
+  border: 1px solid #011627;
   border-radius: 1em;
 }
 
@@ -24,10 +24,10 @@ side-menu .link {
   clear: both;
   display: table;
   height: 10vh;
-  background-color: #D5B9B2;
+  background-color: #CCCCCC;
   width: 100%;
   display: flex;
-  color: white;
+  color: #011627;
   transition: margin-left 1s;
 }
 .navbar .scene {
@@ -37,8 +37,6 @@ side-menu .link {
 }
 .navbar .scene .card {
   border: none;
-  width: 0;
-  height: 0;
   position: relative;
   transition: transform 1s;
 }
@@ -53,10 +51,10 @@ side-menu .link {
   backface-visibility: hidden;
 }
 .navbar .scene .card .card__face--front {
-  background-color: #D5B9B2;
+  background-color: #CCCCCC;
 }
 .navbar .scene .card .card__face--back {
-  background-color: #D5B9B2;
+  background-color: #CCCCCC;
   transform: rotateY(180deg);
 }
 .navbar .scene #is-flipped {

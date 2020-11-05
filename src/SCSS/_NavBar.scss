@@ -10,14 +10,14 @@ side-menu {
   left: 0;
   overflow-x: hidden;
   transition: 1s;
-  background-color: $isabelline;
+  background-color: $platinum;
   @include flex-column;
   .link {
-    color: $space-cadet;
+    color: $fogra-29;
     margin: 5%;
     padding: 5%;
     text-align: center;
-    border: 1px solid $space-cadet;
+    border: 1px solid $fogra-29;
     border-radius: 1em;
   }
 }
@@ -25,10 +25,10 @@ side-menu {
 .navbar {
   @include row;
   height: 10vh;
-  background-color: $silver-pink;
+  background-color: $light-gray;
   width: $col-12;
   display: flex;
-  color: white;
+  color: $fogra-29;
   transition: margin-left 1s;
   .scene {
     height: 100%;
@@ -36,8 +36,6 @@ side-menu {
     display: flex;
     .card {
       border: none;
-      width: 0;
-      height: 0;
       position: relative;
       transition: transform 1s;
       img {
@@ -51,10 +49,10 @@ side-menu {
         backface-visibility: hidden;
       }
       .card__face--front {
-        background-color: $silver-pink;
+        background-color: $light-gray;
       }
       .card__face--back {
-        background-color: $silver-pink;
+        background-color: $light-gray;
         transform: rotateY(180deg);
       }
     }
