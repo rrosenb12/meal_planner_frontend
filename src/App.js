@@ -28,7 +28,7 @@ class App extends React.Component {
           <Route path="/" component={NavBar} />
           <Route path="/login" render={() => <UserForm type="login"/>} />
           <Route path="/signup" render={() => <UserForm type="signup"/>} />
-          <Route path="/home" component={Home}/>
+          <Route exact path="/" component={Home}/>
         </div>
       </BrowserRouter>
     );

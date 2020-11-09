@@ -38,7 +38,7 @@ export default function NavBar() {
           </div>
         </div>
         <title-right>
-          <NavLink className="title" to="/home">mealzy</NavLink>
+          <NavLink className="title" to="/">mealzy</NavLink>
         </title-right>
       </div>
     </>
