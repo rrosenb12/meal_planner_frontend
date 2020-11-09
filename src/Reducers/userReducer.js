@@ -10,7 +10,7 @@ let defaultState = {
 export default function userReducer(state = defaultState, action) {
   switch (action.type) {
     case "SET_USER":
-      return state;
+      return state.currentUser;
     case "CREATE_USER":
       return {
         ...state,

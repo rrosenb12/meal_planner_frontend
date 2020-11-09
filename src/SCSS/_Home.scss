@@ -1,0 +1,12 @@
+@import "colors";
+@import "columns";
+@import "headers";
+
+.home-page {
+  menu-wrapper {
+    @include flex-row;
+    menu-left{
+        @include flex-column;
+    }
+  }
+}

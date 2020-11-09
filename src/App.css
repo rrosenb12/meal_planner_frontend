@@ -76,6 +76,15 @@ side-menu .link {
     font-size: 200%;
   }
 }
+.home-page menu-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+.home-page menu-wrapper menu-left {
+  display: flex;
+  flex-direction: column;
+}
+
 html {
   box-sizing: border-box;
 }
