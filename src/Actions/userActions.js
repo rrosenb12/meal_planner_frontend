@@ -58,6 +58,7 @@ export const loginUser = (userObj) => {
       .then((response) => {
         let token = localStorage.setItem("token", response.jwt);
         localStorage.setItem("user", JSON.stringify(response.user));
+        setCalendar(response.user.id, dispatch)
         dispatch({
           type: "LOGIN_USER",
           payload: token,
