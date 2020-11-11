@@ -1,4 +1,4 @@
-import { createUserCalendar } from "./generalActions";
+import { createUserCalendar, setCalendar } from "./calendarActions";
 
 export const setUser = (token) => {
   return (dispatch) => {
@@ -10,6 +10,7 @@ export const setUser = (token) => {
       .then((response) => {
         let token = localStorage.getItem("token");
         localStorage.setItem("user", JSON.stringify(response.user));
+        setCalendar(response.user.id, dispatch)
         dispatch({
           type: "SET_USER",
           payload: token,

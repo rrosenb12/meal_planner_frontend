@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
 import userReducer from "./userReducer";
-import generalReducer from "./generalReducer";
+import calendarReducer from "./calendarReducer";
 
 const rootReducer = combineReducers({
   currentUser: userReducer,
-  calendar: generalReducer,
+  calendar: calendarReducer,
 });
 
 export default rootReducer;
