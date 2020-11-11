@@ -12,15 +12,20 @@ export const createUserCalendar = (userID, month, dispatch) => {
 };
 
 export const setCalendar = (userID, dispatch) => {
-    fetch(`http://localhost:3000/calendars`)
-    .then(response => response.json())
-    .then(response => setCurrentCalendar(response.filter(calendar => calendar.user_id === userID), dispatch))
-}
+  fetch(`http://localhost:3000/calendars`)
+    .then((response) => response.json())
+    .then((response) =>
+      setCurrentCalendar(
+        response.filter((calendar) => calendar.user_id === userID),
+        dispatch
+      )
+    );
+};
 
 export const createCalendar = (response, dispatch) => {
-    dispatch({type: 'CREATE_CALENDAR', payload: response})
-}
+  dispatch({ type: "CREATE_CALENDAR", payload: response });
+};
 
 export const setCurrentCalendar = (calendar, dispatch) => {
-    dispatch({type: 'SET_CALENDAR', payload: calendar})
-}
+  dispatch({ type: "SET_CALENDAR", payload: calendar });
+};

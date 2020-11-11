@@ -10,7 +10,7 @@ export const setUser = (token) => {
       .then((response) => {
         let token = localStorage.getItem("token");
         localStorage.setItem("user", JSON.stringify(response.user));
-        setCalendar(response.user.id, dispatch)
+        setCalendar(response.user.id, dispatch);
         dispatch({
           type: "SET_USER",
           payload: token,
@@ -58,7 +58,7 @@ export const loginUser = (userObj) => {
       .then((response) => {
         let token = localStorage.setItem("token", response.jwt);
         localStorage.setItem("user", JSON.stringify(response.user));
-        setCalendar(response.user.id, dispatch)
+        setCalendar(response.user.id, dispatch);
         dispatch({
           type: "LOGIN_USER",
           payload: token,

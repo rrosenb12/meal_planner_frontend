@@ -10,10 +10,10 @@ export default function generalReducer(state = defaultState, action) {
         calendar: action.payload,
       };
     case "SET_CALENDAR":
-        return {
-            ...state,
-            calendar: action.payload[0]
-        }
+      return {
+        ...state,
+        calendar: action.payload[0],
+      };
     default: {
       return state;
     }
