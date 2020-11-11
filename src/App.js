@@ -8,6 +8,7 @@ import { connect } from "react-redux";
 import "./App.css";
 
 class App extends React.Component {
+
   state = {
     user: null,
   };
@@ -22,6 +23,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.props.calendar)
     return (
       <BrowserRouter>
         <div className="App">
@@ -35,4 +37,10 @@ class App extends React.Component {
   }
 }
 
-export default connect(null, { setUser })(App);
+const mapStateToProps = state => {
+  return{
+    calendar: state.calendar
+  }
+}
+
+export default connect(mapStateToProps, { setUser })(App);

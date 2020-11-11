@@ -1,9 +1,10 @@
-import { combineReducers } from "redux"
-import userReducer from "./userReducer"
-
+import { combineReducers } from "redux";
+import userReducer from "./userReducer";
+import generalReducer from "./generalReducer";
 
 const rootReducer = combineReducers({
-    currentUser: userReducer
-})
+  currentUser: userReducer,
+  calendar: generalReducer,
+});
 
-export default rootReducer
+export default rootReducer;

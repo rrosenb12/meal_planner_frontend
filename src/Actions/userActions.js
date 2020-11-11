@@ -1,3 +1,5 @@
+import { createUserCalendar } from "./generalActions";
+
 export const setUser = (token) => {
   return (dispatch) => {
     fetch("http://localhost:3000/profile", {
@@ -8,12 +10,16 @@ export const setUser = (token) => {
       .then((response) => {
         let token = localStorage.getItem("token");
         localStorage.setItem("user", JSON.stringify(response.user));
-        dispatch({ type: "SET_USER", payload: token, currentUser: response.user });
+        dispatch({
+          type: "SET_USER",
+          payload: token,
+          currentUser: response.user,
+        });
       });
   };
 };
 
-export const createUser = (userObj) => {
+export const createUser = (userObj, month) => {
   return (dispatch) => {
     fetch("http://localhost:3000/users", {
       method: "POST",
@@ -27,6 +33,7 @@ export const createUser = (userObj) => {
       .then((response) => {
         let token = localStorage.setItem("token", response.jwt);
         localStorage.setItem("user", JSON.stringify(response.user));
+        createUserCalendar(response.user.id, month, dispatch);
         dispatch({
           type: "CREATE_USER",
           payload: token,

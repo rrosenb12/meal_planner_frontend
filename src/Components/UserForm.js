@@ -3,6 +3,9 @@ import { connect } from "react-redux";
 import { createUser, loginUser } from "../Actions/userActions";
 
 class UserForm extends React.Component {
+
+  MONTH = new Date().getMonth() + 1
+
   state = {
     username: "",
     password: "",
@@ -22,7 +25,7 @@ class UserForm extends React.Component {
         username: this.state.username,
         password: this.state.password,
       });
-    this.props.type === "signup" && this.props.createUser(this.state);
+    this.props.type === "signup" && this.props.createUser(this.state, this.MONTH);
   };
 
   render() {
