@@ -1,24 +1,23 @@
+import "./App.css";
 import React from "react";
+import { BrowserRouter, Route } from "react-router-dom";
+
 import UserForm from "./Components/UserForm";
 import NavBar from "./Components/NavBar";
 import Home from "./Components/Home";
-import { BrowserRouter, Route } from "react-router-dom";
+
 import { setUser } from "./Actions/userActions";
 import { connect } from "react-redux";
-import "./App.css";
+import {fetchCalendar} from "./Actions/calendarActions"
 
 class App extends React.Component {
-  state = {
-    user: null,
-  };
+
+  componentWillMount(){
+    this.props.fetchCalendar()
+  }
 
   componentDidMount() {
-    const token = localStorage.getItem("token");
-    if (token) {
-      this.props.setUser(token);
-    } else {
-      console.log("no");
-    }
+    localStorage.getItem("token") && this.props.setUser(localStorage.getItem("token"))
   }
 
   render() {
@@ -42,4 +41,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { setUser })(App);
+export default connect(mapStateToProps, { setUser, fetchCalendar })(App);

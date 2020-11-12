@@ -1,5 +1,3 @@
-import { createUserCalendar, setCalendar } from "./calendarActions";
-
 export const setUser = (token) => {
   return (dispatch) => {
     fetch("http://localhost:3000/profile", {
@@ -10,7 +8,6 @@ export const setUser = (token) => {
       .then((response) => {
         let token = localStorage.getItem("token");
         localStorage.setItem("user", JSON.stringify(response.user));
-        setCalendar(response.user.id, dispatch);
         dispatch({
           type: "SET_USER",
           payload: token,
@@ -34,7 +31,6 @@ export const createUser = (userObj, month) => {
       .then((response) => {
         let token = localStorage.setItem("token", response.jwt);
         localStorage.setItem("user", JSON.stringify(response.user));
-        createUserCalendar(response.user.id, month, dispatch);
         dispatch({
           type: "CREATE_USER",
           payload: token,
@@ -58,7 +54,6 @@ export const loginUser = (userObj) => {
       .then((response) => {
         let token = localStorage.setItem("token", response.jwt);
         localStorage.setItem("user", JSON.stringify(response.user));
-        setCalendar(response.user.id, dispatch);
         dispatch({
           type: "LOGIN_USER",
           payload: token,

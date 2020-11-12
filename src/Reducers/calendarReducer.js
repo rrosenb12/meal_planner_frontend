@@ -2,20 +2,14 @@ let defaultState = {
   calendar: null,
 };
 
-export default function generalReducer(state = defaultState, action) {
+export default function calendarReducer(state = defaultState, action) {
   switch (action.type) {
-    case "CREATE_CALENDAR":
+    case "GENERAL_CALENDAR":
       return {
         ...state,
-        calendar: action.payload,
+        calendar: action.payload
       };
-    case "SET_CALENDAR":
-      return {
-        ...state,
-        calendar: action.payload[0],
-      };
-    default: {
+    default:
       return state;
-    }
   }
 }
