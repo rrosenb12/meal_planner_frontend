@@ -2,20 +2,26 @@ import React from "react";
 import { connect } from "react-redux";
 
 function OneWeek(props) {
-  return <>{props.calendar && getDay(props.calendar)}</>;
+  return (
+    <div className="week">{props.calendar && getWeek(props.calendar)}</div>
+  );
 }
 
-const getDay = (calendar) => {
-  let today = new Date();
-  let year = today.getFullYear();
-  let month = today.getMonth() + 1;
-  let day = today.getDate();
-  let d = calendar.filter(
+const getWeek = (calendar) => {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = today.getMonth() + 1;
+  const day = today.getDate();
+  const d = calendar.filter(
     (date) => date.year === year && date.month === month && date.day === day
   );
-  let startingIndex = calendar.indexOf(d[0])
-  let sevenDays = calendar.slice(startingIndex, 7)
-  console.log(sevenDays)
+  const sunday =
+    d.day_of_week !== 0
+      ? calendar[calendar.indexOf(d[0]) - (calendar.indexOf(d[0]) - 1)]
+      : d;
+  const startingIndex = calendar.indexOf(sunday);
+  const sevenDays = calendar.slice(startingIndex, 8);
+  return sevenDays.map((day) => <p key={day.id}>{day.month}/{day.day}/{day.year}</p>);
 };
 
 const mapStateToProps = (state) => {
