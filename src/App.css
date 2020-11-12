@@ -101,6 +101,32 @@ side-menu .link {
 .home-page .menu-wrapper h3 {
   text-align: center;
 }
+.home-page .menu-wrapper .week {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  list-style: none;
+}
+.home-page .menu-wrapper .week li {
+  color: #011627;
+  padding: 1%;
+  height: 10vh;
+  width: fit-content;
+}
+.home-page .menu-wrapper .week li:nth-child(odd) {
+  background-color: #E4FFD6;
+}
+.home-page .menu-wrapper .week li:nth-child(odd):first-of-type {
+  border-radius: 10px 0px 0px 10px;
+}
+.home-page .menu-wrapper .week li:nth-child(odd):last-of-type {
+  border-radius: 0px 10px 10px 0px;
+}
+.home-page .menu-wrapper .week li:nth-child(even) {
+  background-color: #EBEBEB;
+}
 .home-page .menu-wrapper .menu-sides {
   width: 100%;
   display: flex;

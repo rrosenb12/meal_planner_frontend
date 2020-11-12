@@ -25,6 +25,34 @@
     h3 {
       text-align: center;
     }
+    .week {
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      justify-content: center;
+      // border: 3px solid $fogra-29;
+      border-radius: 10px;
+      list-style: none;
+      // width: fit-content;
+      li{
+        color: $fogra-29;
+        padding: 1%;
+        height: 10vh;
+        width: fit-content;
+        &:nth-child(odd) {
+          background-color: $nyanza;
+          &:first-of-type {
+            border-radius: 10px 0px 0px 10px;
+          }
+          &:last-of-type {
+            border-radius: 0px 10px 10px 0px;
+          }
+        }
+        &:nth-child(even){
+          background-color: $platinum;
+        }
+      }
+    }
     .menu-sides {
       width: $col-12;
       display: flex;
